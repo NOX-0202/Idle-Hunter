@@ -1,4 +1,4 @@
-# Jogo sem nome
+# Idle Hunter
 A Ideia da aplicação é criar um jogo baseado em Solo Leveling do estilo idle.
 ## Criadores
     - Marcos Ani Cury Vinagre Silva
