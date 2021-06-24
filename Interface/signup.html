@@ -9,10 +9,12 @@
 <body>
     <h1>Cadastro:</h1>
     <form id="formSignup" action="http://localhost:/">
-        Nickname:<input type="text" name="nick" id="nick" required> <br>
+        Nickname:<input type="text" name="nickname" id="nickname" required> <br>
         <div id="nicknameCheck"></div>
-        Senha:<input type="text" name="password" id="password" required> <br> 
-        Senha Novamente:<input type="text" name="passwordAgain" id="passwordAgain" required> <br> 
+        Senha:<input type="password" name="password" id="password" required>
+        <img src="./assets/Images/passwordSee.png" height="10" onmouseover="mouseoverPass('password')" onmouseout="mouseoutPass('password')"> <br> 
+        Senha Novamente:<input type="password" name="passwordAgain" id="passwordAgain" required>
+        <img src="./assets/Images/passwordSee.png" height="10" onmouseover="mouseoverPass('passwordAgain')" onmouseout="mouseoutPass('passwordAgain')"> <br> 
         <div id="checkPasswordEquals"></div>
         Email: <input type="email" name="email" id="email" required> <br>
         <button type="submit">Cadastrar</button>
@@ -20,7 +22,7 @@
     </form>
     <a href="./index.html">Voltar para o login</a>
 </body>
+    <script src="./assets/JS/jquery.js"></script>
     <script src="./renderer.js"></script>
-    <script src="./assets/JS/Req.js"></script>
     <script src="./assets/JS/signup.js"></script>
 </html>

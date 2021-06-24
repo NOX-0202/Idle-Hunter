@@ -1,7 +1,7 @@
 const MessageElement = document.getElementsByClassName("Message")
 
 var Elements = {
-    nick: document.getElementById('nick'),
+    nick: document.getElementById('nickname'),
     password: document.getElementById('password'),
     passwordAgain: document.getElementById('passwordAgain'),
     email: document.getElementById('email')
@@ -9,13 +9,21 @@ var Elements = {
 
 function formSender (e) {
     e.preventDefault()
-    console.log(e)
-    MakeRequest('http://localhost:4567/register', {
-        nick: document.getElementById('nick').value,
+
+    var xhr = new XMLHttpRequest();
+    
+    let data = {
+        nickname: document.getElementById('nickname').value,
         password: document.getElementById('password').value,
-        passwordAgain: document.getElementById('passwordAgain').value,
         email: document.getElementById('email').value
-    })
+    } 
+
+    xhr.open('POST', 'http://localhost:4567/register');
+    xhr.onload = function(data) {
+        console.log('loaded', this.responseText);
+    };
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(data));
 }
 
 function checkNick (){
@@ -33,6 +41,16 @@ function checkPasswordEquals (){
         passwordCheckElement.innerHTML = "<span> As senhas não coincidem </span>"
     else
         passwordCheckElement.innerHTML = ""
+}
+
+function mouseoverPass(obj) {
+    obj = document.getElementById(obj);
+    obj.type = "text";
+}
+
+function mouseoutPass(obj) {
+    obj = document.getElementById(obj);
+    obj.type = "password";
 }
 
 document.getElementById("formSignup").addEventListener('submit', formSender)
