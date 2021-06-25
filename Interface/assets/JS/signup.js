@@ -24,6 +24,8 @@ function formSender (e) {
     };
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(data));
+
+    location.hre = "http://localhost:4567/home"
 }
 
 function checkNick (){

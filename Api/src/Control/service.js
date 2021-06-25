@@ -11,8 +11,17 @@ module.exports = {
         })
     },
 
+    async checkUser(req,res){
+        console.log(req.body)
+        /*const user = await User.findOne({
+            "nickname" : req.params.nickname,
+            "password" : req.params.password
+        })*/
+        return res.send(req)
+    },
+
     async showUser(req, res) {
-        const user = await User.findById(req.params.id);
+        const user = await User.findById(req.params.id)
         return res.json(user);
     },
 
