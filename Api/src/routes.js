@@ -1,8 +1,8 @@
 const express = require("express");
 const routes = express.Router();
 
-const ApiKeyControle = require('./Control/ApiKeyController.js')
-const serviceControle = require('./Control/UserController.js')
+const ApiKeyControle = require('./Controllers/ApiKeyController.js')
+const serviceControle = require('./Controllers/UserController.js')
 
 routes.use(function (req, res, next) {
     
