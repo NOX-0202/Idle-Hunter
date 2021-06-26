@@ -5,11 +5,10 @@ const ApiKeyControle = require('./Controllers/ApiKeyController.js')
 const serviceControle = require('./Controllers/UserController.js')
 
 routes.use(function (req, res, next) {
-    
     next()
 })
 
-routes.get("/key/add", ApiKeyControle.StoreKey)
+routes.get("/key/add", ApiKeyConrole.StoreKey)
 routes.get("/key/check/:key", ApiKeyControle.checkKey)
 routes.post("/key/check/delete", ApiKeyControle.deleteKey)
 // GET routes
